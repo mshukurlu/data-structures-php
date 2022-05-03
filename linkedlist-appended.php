@@ -87,6 +87,25 @@ class LinkedList
     {
         print_r($this->head);
     }
+    
+    public function removeDublicats()
+    {
+        $temp = $this->head;
+        $set = [];
+        $set[] = $temp->data;
+       while($temp->next!=null)
+       {
+           if(in_array($temp->next->data,$set))
+           {
+               $temp->next = $temp->next->next;
+           }else
+               {
+                   $temp = $temp->next;
+               }
+           $set[] = $temp->data;
+       }
+    }
+    
 }
 
 
