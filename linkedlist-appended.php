@@ -131,6 +131,19 @@ class LinkedList
        return $nodeCount;
    }
     
+       public function findMiddleElementOfList()
+   {
+       $slow = $this->head;
+       $fast = $this->head;
+
+       while($fast!= null){
+           $fast = $fast->next->next;
+           $slow = $slow->next;
+       }
+
+       return $slow->data;
+   }
+    
 }
 
 
