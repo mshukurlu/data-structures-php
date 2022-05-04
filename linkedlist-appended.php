@@ -106,6 +106,31 @@ class LinkedList
        }
     }
     
+    
+    public function getKthLastElement($position){
+
+       $nodeCount = $this->nodeCount();
+
+       $limit = $nodeCount-$position;
+       $temp = $this->head;
+       for($i=0;$i<$limit;$i++){
+           $temp = $temp->next;
+       }
+
+       return $temp->data;
+   }
+
+   public function nodeCount()
+   {
+       $nodeCount = 0;
+       $temp = $this->head;
+       while($temp!=null){
+           $nodeCount++;
+           $temp = $temp->next;
+       }
+       return $nodeCount;
+   }
+    
 }
 
 
