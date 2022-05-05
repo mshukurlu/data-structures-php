@@ -144,6 +144,19 @@ class LinkedList
        return $slow->data;
    }
     
+   public function reverseList()
+    {
+        $newlist = new self();
+
+        $temp = $this->head;
+
+        while($temp!=null){
+            $newlist->pushFront($temp->data);
+            $temp = $temp->next;
+        }
+
+        $this->head = $newlist;
+    } 
 }
 
 
